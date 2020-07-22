@@ -1,0 +1,48 @@
+{%load socialaccount %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/user.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/first.css' %}">
+</head>
+<body>
+<div class="hari">
+<header>
+
+    <ul>
+        <li><a href="todo/home">Home</a></li>
+        <li><a href="todo/news">news</a></li>
+        <li><a href="todo/about">about</a></li>
+      </ul>
+</header>
+<div class="login-box">
+    <img src="{% static 'images/avatar.png' %}" class="avatar">
+        <h1>signup Here</h1>
+<form action="signup" method="POST">
+    {% csrf_token %}
+    <!--<p>firstname</p>
+     <input type="text" placeholder="firstname" name="firstname"><br>
+    <p>lastname</p>
+    <input type="text" placeholder="lastname" name="lastname"><br>-->
+    <p>username</p>
+    <input type="text" placeholder="username" name="username"><br>
+    <p>email</p>
+    <input type="email" placeholder="email" name="email"><br>
+    <p>password</p>
+    <input type="password" placeholder="password" name="password"><br>
+    <input type="submit"><br></form>
+    <hr>
+    <p class="or">OR</p>
+    <a href="{% url 'account_signup' %}"><button type="button">signup with google</button>
+    </a>
+    <div class="hari">
+    {% for message in messages %}
+    {{message}}
+    {% endfor %}
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% load static %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+</head>
+<body>
+<div class="hari">
+<header>
+    <ul>
+        <li><a href="todo/home">Home</a></li>
+        <li><a href="todo/news">news</a></li>
+        <li><a href="todo/about">about</a></li>
+     </ul>
+</header>
+<div class="login-up-form">
+    <img src="{% static 'images/avatar.png' %}">
+    <h1>login up now</h1>
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" class="input-box" placeholder="username" name="username"><br>
+    <input type="password" class="input-box" placeholder="password" name="password"><br>
+    <input type="submit" value="login"></form><br>
+    <hr>
+    <p class="or">OR</p><a href="{% provider_login_url 'google' %}">
+    <button type="button">login with google</button></a>
+    <p>don't have an account?<a href="signup">sign up</a></p>
+    <div class="hari">
+    {% for message in messages %}
+    {{message}}
+    {% endfor %}
+</div>
+</div>
+</body>
+</html>

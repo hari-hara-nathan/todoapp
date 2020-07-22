@@ -1,0 +1,51 @@
+{% load socialaccount %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'img\user.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css\second.css' %}"><!-- <link rel="stylesheet" type="text/css" href="{% static 'css\first.css' %}">-->
+</head>
+<body>
+<div class="hari">
+<header>
+
+    <ul>
+        <li><a href="todo/home">Home</a></li>
+        <li><a href="news">news</a></li>
+        <li><a href="about">about</a></li>
+        {% if user.is_authenticated%}
+        <li><a href="logout">logout</a></li>
+        {% else %}
+        <li><a href="login">login</a></li>
+        {% endif %}
+    </ul>
+</header>
+    {% if user.is_authenticated %}
+</div>
+<div class="todo"><div class="todolist">
+    {% for content in list %}
+    {{content.todo_item}}<div class="buttons">
+    <a href=delete/{{content.id}}><button class="btn-del">delete</button></a>
+    <a href=done/{{content.id}}><button class="btn-done">done</button></a><br></div><hr>
+    {% endfor %}
+</div>
+    <div class="donelist">
+        {% for content in list2 %}
+        {{content.todo_item}}<br><hr>
+        {% endfor %}
+    </div>
+</div>
+    <div class="addform">
+    <form action="{% url 'addtodo' %}" method="POST" >
+        {% csrf_token %}
+        {{forms}}
+        <input type="submit"  class="btn-img"></input>
+    </form>
+        {% endif %}
+    </div>
+
+</body>
+</html>
