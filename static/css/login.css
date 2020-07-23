@@ -1,0 +1,90 @@
+body{
+margin:0;
+padding:0;
+background-image: url('img/image.jpg');
+background-size: cover;
+font-family: sans-serif;
+}
+.login-up-form{
+border-radius: 25px;
+width: 340px;
+padding: 20px;
+margin: 7% auto 0;
+text-align: center;
+color: #000;
+background-color: #fff;
+border-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6)
+}
+.login-up-form h1{
+color: #1c8adb;
+margin-bottom: 20px;
+}
+.input-box{
+border-radius: 20px;
+padding: 10px;
+margin: 10px 0;
+border: 1px solid #999;
+width: 80%;
+outline: none;
+}
+.login-up-form input[type=submit]{
+width:75%;
+background-color: #21afde;
+color: #fff;
+border-radius: 20px;
+outline: none;
+margin-top: 15px;
+padding: 10px;
+border: none;
+font-size: 1em;
+}
+.login-up-form button{
+width:75%;
+background-color: #1c8adb;
+color: #fff;
+border-radius: 20px;
+outline: none;
+margin-top: 15px;
+padding: 10px;
+border: none;
+font-size: 1em;
+}
+.or{
+background: #fff;
+width: 30px;
+margin: -19px auto 10px;
+}
+a{
+font-size: 20px;
+margin-left: 3px;
+text-decoration: none;
+}
+.login-up-form img{
+width: 90px;
+margin-top: -55px;
+}
+/* header*/
+ul{
+  list-style-type: none;
+  margin:0;
+  padding:0;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 2em;
+  overflow: hidden;
+  }
+li{
+float: left;
+}
+
+li a {
+  text-align: center;
+  display: block;
+  padding: 16px 16px;
+  text-decoration: none;
+  color: white;
+  }
+/* Change the link color on hover */
+li a:hover {
+  background-color: #555;
+  color: white;
+}
