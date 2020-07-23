@@ -8,4 +8,5 @@ class Todoform(forms.ModelForm):
         widgets = {
             'todo_item' : forms.TextInput(attrs={'placeholder':'enter the work','label':''}),
             'lastdate': forms.DateInput(attrs={'placeholder':'enter the lastdate'})
+            #lastdate
         }
